@@ -26,7 +26,8 @@ jobs:
        run: |
          newman run 'In Warranty flow.postman_collection.json' \
          -e QA.postman_environment.json \
-         -r cli,htmlextra
+         -r cli,htmlextra \
+         --reporter-htmlextra-export  ./newman/index.html
 
 
      - name: upload artifact
