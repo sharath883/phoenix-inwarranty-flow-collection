@@ -33,9 +33,17 @@ jobs:
        if: always()
        uses: actions/upload-artifact@v5.0.0
        with:
-         name: newman_html_report_
+         name: newman_html_report
          path: newman/*.html
-         
+
+
+     - name: creating github page
+       if: always()
+       uses: peaceiris/actions-gh-pages@v4.0.0
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: newman
+      
 
          
    
